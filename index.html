@@ -317,7 +317,7 @@ nav.hd{transform:translateY(-105%)}
 @media(max-width:860px){.about{grid-template-columns:minmax(0,1fr)}.about>div{min-width:0}.stats{flex-wrap:wrap;gap:20px 34px}.stats b{font-size:2.4rem}.growth .words{font-size:1.5rem}}
 @media(max-width:600px){.hero p.eb{font-size:10px;letter-spacing:.14em;gap:10px;padding:0 4vw}.hero p.eb:before,.hero p.eb:after{width:18px}.cta h2{font-size:clamp(2.6rem,13vw,4rem)}footer{flex-direction:column;gap:10px}}
 @media(max-width:600px){.cta h2{font-size:clamp(2.2rem,10.5vw,3.6rem)}.cta h2 span{white-space:nowrap}}
-</style></head><body>
+.gx-err{padding:14px 6vw;font:600 13px var(--sans);color:#b3261e;background:#fff3f2}</style></head><body>
 <div class="sp"></div><div class="pre"><i class="pb t"></i><i class="pb b"></i><img src="https://mirchiads.com/assets/images/optimized/mirchi-logo-white.webp" alt=""></div>
 <nav><a href="#top"><img src="https://mirchiads.com/assets/images/optimized/mirchi-logo-dark.webp" alt="MirchiAds"></a><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li></ul><a class="btn" href="tel:+919962720070">+91 99627 20070</a><button class="mb" aria-label="Menu"><i></i><i></i></button></nav><div class="mm"><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a class="btn fill" href="tel:+919962720070">Call +91 99627 20070</a></div>
 <section class="hero" id="top"><div class="seal"><svg viewBox="0 0 120 120"><defs><path id="sp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><text><textPath href="#sp" textLength="268" lengthAdjust="spacing">Digital Marketing · Coimbatore · Since 2017 · </textPath></text></svg><b>↓</b></div><div class="scr">Scroll</div>
@@ -459,11 +459,11 @@ if(wm){const sp=$('#sp'),gs=$('.gs'),box=wm.parentNode,hero=$('.hero'),base=$('#
   const st={trigger:'.hero',start:'top top',end:'bottom top',scrub:true};
   gsap.to(S,{X:1100,ease:'none',scrollTrigger:st});gsap.to(box,{scale:1.22,yPercent:-6,ease:'none',scrollTrigger:st});}}
 if($('#gx')){
- const G=window.GALLERY||[],tabs=$('#gx-tabs'),panel=$('#gx-panel'),num=$('#gx-num');let cur=-1,busy=false;
+ const G=window.GALLERY||[],tabs=$('#gx-tabs'),panel=$('#gx-panel'),num=$('#gx-num');let cur=-1,busy=false,B='';const u=s=>/^(https?:)?\/\//.test(s)?s:B+s;
  tabs.innerHTML='<i class="gx-ind" id="gx-ind"></i>'+G.map((c,i)=>`<button class="gx-tab" data-i="${i}"><b>${String(i+1).padStart(2,'0')}</b><span>${c.name}</span><em>${c.videos.length?c.videos.length+(c.videos.length>1?' films':' film'):'Soon'}</em></button>`).join('');
  const T=$$('.gx-tab'),ind=$('#gx-ind');
- const place=(i,now)=>{const t=T[i];gsap.to(ind,{x:t.offsetLeft,width:t.offsetWidth,duration:now||rm?0:.9,ease:'expo.out'})};
- const build=i=>{const c=G[i],yt=s=>/youtube|vimeo/.test(s),vs=c.videos.length?c.videos.map(v=>`<div class="gx-card" style="--arn:${v.arn||1.7778}"><div class="vid">${yt(v.src)?`<iframe src="${v.src}" allowfullscreen loading="lazy"></iframe>`:`<video src="${v.src}" muted loop playsinline preload="metadata"${v.poster?` poster="${v.poster}"`:''}></video><i class="gx-pl">▶</i>`}</div></div>`).join(''):[1,2,3].map(n=>`<div class="gx-card ph"><div class="vid"><i class="gx-play">▶</i><span>Film ${n} · coming soon</span></div></div>`).join('');
+ const place=(i,now)=>{const t=T[i];if(!t)return;gsap.to(ind,{x:t.offsetLeft,width:t.offsetWidth,duration:now||rm?0:.9,ease:'expo.out'})};
+ const build=i=>{const c=G[i],yt=s=>/youtube|vimeo/.test(s),vs=c.videos.length?c.videos.map(v=>`<div class="gx-card" style="--arn:${v.arn||1.7778}"><div class="vid">${yt(v.src)?`<iframe src="${v.src}" allowfullscreen loading="lazy"></iframe>`:`<video src="${u(v.src)}" muted loop playsinline preload="metadata"${v.poster?` poster="${u(v.poster)}"`:''}></video><i class="gx-pl">▶</i>`}</div></div>`).join(''):[1,2,3].map(n=>`<div class="gx-card ph"><div class="vid"><i class="gx-play">▶</i><span>Film ${n} · coming soon</span></div></div>`).join('');
   return `<div class="gx-head"><div class="gx-hw"><h3>${c.name}</h3></div><p>${c.desc}</p></div><div class="gx-track">${vs}</div>`};
  const swap=(i,dir)=>{panel.innerHTML=build(i);num.textContent=String(i+1).padStart(2,'0');busy=false;if(rm)return;
   gsap.fromTo(num,{yPercent:70*dir,opacity:0},{yPercent:0,opacity:1,duration:1.1,ease:'expo.out'});
@@ -487,7 +487,10 @@ if($('#gx')){
  panel.addEventListener('click',e=>{const c=e.target.closest('.gx-card');if(!c||c.classList.contains('ph')||mv)return;stopV();const v=c.querySelector('video'),f=c.querySelector('iframe');
   lv.innerHTML=f?`<iframe src="${f.src}" allowfullscreen></iframe>`:`<video src="${v.getAttribute('src')}" controls autoplay playsinline></video>`;lb.classList.add('on');lenis.stop();if(!rm)gsap.fromTo(lv,{scale:.92,opacity:0},{scale:1,opacity:1,duration:.8,ease:'expo.out'})});
  lb.addEventListener('click',e=>{if(e.target===lb||e.target.closest('.gx-x'))shut()});addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
- const h=location.hash.slice(1),hi=G.findIndex(c=>c.id===h);go(Math.max(0,hi),true);if(hi>=0)setTimeout(()=>lenis.scrollTo('#gallery',{offset:-60}),2800);
+ const start=()=>{const h=location.hash.slice(1),hi=G.findIndex(c=>c.id===h);go(Math.max(0,hi),true);if(hi>=0)setTimeout(()=>lenis.scrollTo('#gallery',{offset:-60}),2800)};
+ const fv=G.flatMap(c=>c.videos).find(v=>v.poster&&!/^(https?:)?\/\//.test(v.poster)),bs=['','mirchi/'];
+ const tryB=i=>{if(i>=bs.length){const n=document.createElement('p');n.className='gx-err';n.textContent='Videos not found. Please upload the "gallery" folder next to index.html.';$('#gx').before(n);start();return}const im=new Image();im.onload=()=>{B=bs[i];start()};im.onerror=()=>tryB(i+1);im.src=bs[i]+fv.poster};
+ fv?tryB(0):start();
  addEventListener('resize',()=>place(cur,true));if(document.fonts)document.fonts.ready.then(()=>place(cur,true));
  if(!rm)gsap.from('.gx-top>*,.gx-rw',{opacity:0,y:30,stagger:.12,delay:1.6,duration:1.2,ease:'power3.out'});
 }
