@@ -303,24 +303,21 @@ nav.sc{background:#fff;border-bottom-color:var(--line);box-shadow:0 14px 34px -2
 nav.hd{transform:translateY(-105%)}
 .gx-rw{transition:top .7s cubic-bezier(.2,.8,.2,1)}.nh .gx-rw{top:0}
 
-.mb,.mm{display:none}
-.mb{width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
-.mb i{display:block;width:18px;height:2px;background:var(--navy);transition:transform .4s}
-.mo .mb i:nth-child(1){transform:translateY(3.5px) rotate(45deg)}.mo .mb i:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
-.mm{position:fixed;inset:0;z-index:40;background:var(--pale);flex-direction:column;justify-content:center;padding:0 8vw;opacity:0;pointer-events:none;transition:opacity .4s}.mo .mm{opacity:1;pointer-events:auto}
-.mm a{font:500 clamp(2.4rem,11vw,3.6rem)/1.15 var(--serif);color:var(--navy);padding:8px 0;border-bottom:1px solid var(--line)}
-.mm a.btn{margin-top:30px;text-align:center;font:700 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:18px 30px;border:0}
-@media(max-width:860px){.mb{display:flex}.mm{display:flex}nav>.btn{display:none}nav.sc,nav{padding:12px 5vw}
-.gx-track{--h:min(58vh,500px)}.gx-card{width:min(84vw,calc(var(--h)*var(--arn,1.7778)));max-width:none}.gx-card .vid{height:auto;aspect-ratio:var(--arn,1.7778)}.gx-card.ph .vid{aspect-ratio:16/10}}
-
-.gx-track{scroll-padding-left:6vw}
-@media(max-width:860px){.about{grid-template-columns:minmax(0,1fr)}.about>div{min-width:0}.stats{flex-wrap:wrap;gap:20px 34px}.stats b{font-size:2.4rem}.growth .words{font-size:1.5rem}}
-@media(max-width:600px){.hero p.eb{font-size:10px;letter-spacing:.14em;gap:10px;padding:0 4vw}.hero p.eb:before,.hero p.eb:after{width:18px}.cta h2{font-size:clamp(2.6rem,13vw,4rem)}footer{flex-direction:column;gap:10px}}
-@media(max-width:600px){.cta h2{font-size:clamp(2.2rem,10.5vw,3.6rem)}.cta h2 span{white-space:nowrap}}
-.gx-err{padding:14px 6vw;font:600 13px var(--sans);color:#b3261e;background:#fff3f2}</style></head><body>
+@media(max-width:860px){
+ nav,nav.sc{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:55px 40px;padding:0 5vw;background:var(--pale);border-bottom-color:var(--line)}
+ nav.hd{transform:none}
+ nav img{height:30px;max-width:100%}
+ nav>.btn{grid-column:2;grid-row:1;padding:6px 10px;font-size:12px;white-space:nowrap}
+ nav ul{display:flex;grid-column:1/-1;grid-row:2;align-self:stretch;justify-content:center;align-items:center;gap:clamp(16px,6vw,42px);margin:0;padding:0;border-top:1px solid var(--line)}
+ nav ul a{display:block;padding:9px 3px}
+ nav ul a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--lime);text-underline-offset:5px}
+ .gx{padding-top:96px}
+ .gx-rw,.nh .gx-rw{top:96px}
+}
+</style></head><body>
 <div class="sp"></div><div class="pre"><i class="pb t"></i><i class="pb b"></i><img src="https://mirchiads.com/assets/images/optimized/mirchi-logo-white.webp" alt=""></div>
-<nav><a href="#top"><img src="https://mirchiads.com/assets/images/optimized/mirchi-logo-dark.webp" alt="MirchiAds"></a><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li></ul><a class="btn" href="tel:+919962720070">+91 99627 20070</a><button class="mb" aria-label="Menu"><i></i><i></i></button></nav><div class="mm"><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a class="btn fill" href="tel:+919962720070">Call +91 99627 20070</a></div>
-<section class="hero" id="top"><div class="seal"><svg viewBox="0 0 120 120"><defs><path id="sp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><text><textPath href="#sp" textLength="268" lengthAdjust="spacing">Digital Marketing · Coimbatore · Since 2017 · </textPath></text></svg><b>↓</b></div><div class="scr">Scroll</div>
+<nav aria-label="Main navigation"><a href="index.html"><img src="https://mirchiads.com/assets/images/optimized/mirchi-logo-dark.webp" alt="MirchiAds"></a><ul><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Services</a></li><li><a href="gallery.html">Gallery</a></li></ul><a class="btn" href="tel:+919962720070">+91 99627 20070</a></nav>
+<section class="hero"><div class="seal"><svg viewBox="0 0 120 120"><defs><path id="sp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><text><textPath href="#sp" textLength="268" lengthAdjust="spacing">Digital Marketing · Coimbatore · Since 2017 · </textPath></text></svg><b>↓</b></div><div class="scr">Scroll</div>
 <p class="eb">Digital marketing agency · Coimbatore</p>
 <h1 class="wmh"><span class="sr">MirchiAds</span><i class="gs"></i><svg id="wm" viewBox="0 0 1600 400" aria-hidden="true"><defs>
 <text id="wt" x="50" y="315" font-size="330" textLength="1500" lengthAdjust="spacingAndGlyphs" font-family="'Cormorant Garamond',serif" font-weight="500">MirchiAds</text>
@@ -350,9 +347,7 @@ nav.hd{transform:translateY(-105%)}
 <div class="pc"><div class="viz v6"><div class="k bk"></div><div class="k"><div class="av"></div><div class="ln"></div><div class="ln"></div><div class="sc"></div><div class="ck">✓</div></div></div><h3>Hiring Support</h3><p>Build the team behind the business.</p></div>
 <div class="pc"><div class="viz v7"><div class="beam"></div><div class="dr"><i class="arm"></i><i class="bd"></i><i class="pr" style="left:0"></i><i class="pr" style="right:0"></i></div></div><h3>Drone Shoots</h3><p>See the bigger picture.</p></div>
 </div><div class="tags"><span>Real Estate</span><span>Healthcare</span><span>Education</span><span>Interiors &amp; Construction</span><span>Retail &amp; E-commerce</span><span>Professional Services</span></div></section>
-<section class="gx" id="gallery"><div class="gx-rw"><div class="gx-tabs" id="gx-tabs"></div></div>
-<div class="gx-stage" id="gx"><div class="gx-nw"><b class="gx-num" id="gx-num">01</b></div><div class="gx-panel" id="gx-panel"></div></div></section>
-<section class="cta"><h2><span class="c1">We'd love to</span><span class="c2">grow with you.</span></h2><p>That was a quick introduction to MirchiAds. Tell us about your business and we'll discuss the marketing support to help you get there.</p><a class="btn fill" href="https://wa.me/919962720070">Start a conversation</a> &nbsp; <a class="btn" href="tel:+919962720070">Call us</a></section>
+<section class="cta"><h2><span class="c1">We'd love to</span><span class="c2">grow with you.</span></h2><p>That was a quick introduction to MirchiAds. Tell us about your business and we'll discuss the marketing support to help you get there.</p><a class="btn fill" href="https://wa.me/919962720070">Start a conversation</a> &nbsp; <a class="btn" href="gallery.html">View our work</a></section>
 <footer><span>© 2026 MirchiAds · 303-2, 3rd Floor, Dhanaas Arcata, Singanallur, Coimbatore – 641005</span><span><a href="mailto:info@mirchiads.com">info@mirchiads.com</a></span></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script><script>/* GALLERY: add videos to each category.
    Put files in /gallery (e.g. gallery/spa/film1.mp4) and add {title:'Client name', src:'gallery/spa/film1.mp4', poster:'gallery/spa/film1.jpg', arn:1.7778}  (arn = width/height, e.g. 0.5625 for vertical reels).
@@ -407,7 +402,6 @@ const split=el=>{[...el.childNodes].forEach(n=>{if(n.nodeType===3){const f=docum
 const lenis=new Lenis({lerp:.1});let vel=0;
 lenis.on('scroll',e=>{vel=e.velocity;ScrollTrigger.update()});
 const nv=document.querySelector('nav');let ly=0;lenis.on('scroll',e=>{const y=e.scroll,d=y-ly;nv.classList.toggle('sc',y>30);if(y>260&&d>3){nv.classList.add('hd');document.documentElement.classList.add('nh')}else if(d<-3||y<=260){nv.classList.remove('hd');document.documentElement.classList.remove('nh')}ly=y});
-const mb=document.querySelector('.mb');if(mb){const R=document.documentElement,tg=o=>{R.classList.toggle('mo',o);o?lenis.stop():lenis.start()};mb.addEventListener('click',()=>tg(!R.classList.contains('mo')));document.querySelectorAll('.mm a').forEach(a=>a.addEventListener('click',()=>tg(false)))}
 gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
 gsap.timeline({delay:.7}).to('.pre img',{opacity:0,scale:1.25,duration:.6}).to('.pb.t',{yPercent:-100,duration:1.2,ease:'expo.inOut'},'+=.1').to('.pb.b',{yPercent:100,duration:1.2,ease:'expo.inOut'},'<').set('.pre',{display:'none'});
 if(!rm){
@@ -459,11 +453,11 @@ if(wm){const sp=$('#sp'),gs=$('.gs'),box=wm.parentNode,hero=$('.hero'),base=$('#
   const st={trigger:'.hero',start:'top top',end:'bottom top',scrub:true};
   gsap.to(S,{X:1100,ease:'none',scrollTrigger:st});gsap.to(box,{scale:1.22,yPercent:-6,ease:'none',scrollTrigger:st});}}
 if($('#gx')){
- const G=window.GALLERY||[],tabs=$('#gx-tabs'),panel=$('#gx-panel'),num=$('#gx-num');let cur=-1,busy=false,B='';const u=s=>/^(https?:)?\/\//.test(s)?s:B+s;
+ const G=window.GALLERY||[],tabs=$('#gx-tabs'),panel=$('#gx-panel'),num=$('#gx-num');let cur=-1,busy=false;
  tabs.innerHTML='<i class="gx-ind" id="gx-ind"></i>'+G.map((c,i)=>`<button class="gx-tab" data-i="${i}"><b>${String(i+1).padStart(2,'0')}</b><span>${c.name}</span><em>${c.videos.length?c.videos.length+(c.videos.length>1?' films':' film'):'Soon'}</em></button>`).join('');
  const T=$$('.gx-tab'),ind=$('#gx-ind');
- const place=(i,now)=>{const t=T[i];if(!t)return;gsap.to(ind,{x:t.offsetLeft,width:t.offsetWidth,duration:now||rm?0:.9,ease:'expo.out'})};
- const build=i=>{const c=G[i],yt=s=>/youtube|vimeo/.test(s),vs=c.videos.length?c.videos.map(v=>`<div class="gx-card" style="--arn:${v.arn||1.7778}"><div class="vid">${yt(v.src)?`<iframe src="${v.src}" allowfullscreen loading="lazy"></iframe>`:`<video src="${u(v.src)}" muted loop playsinline preload="metadata"${v.poster?` poster="${u(v.poster)}"`:''}></video><i class="gx-pl">▶</i>`}</div></div>`).join(''):[1,2,3].map(n=>`<div class="gx-card ph"><div class="vid"><i class="gx-play">▶</i><span>Film ${n} · coming soon</span></div></div>`).join('');
+ const place=(i,now)=>{const t=T[i];gsap.to(ind,{x:t.offsetLeft,width:t.offsetWidth,duration:now||rm?0:.9,ease:'expo.out'})};
+ const build=i=>{const c=G[i],yt=s=>/youtube|vimeo/.test(s),vs=c.videos.length?c.videos.map(v=>`<div class="gx-card" style="--arn:${v.arn||1.7778}"><div class="vid">${yt(v.src)?`<iframe src="${v.src}" allowfullscreen loading="lazy"></iframe>`:`<video src="${v.src}" muted loop playsinline preload="metadata"${v.poster?` poster="${v.poster}"`:''}></video><i class="gx-pl">▶</i>`}</div></div>`).join(''):[1,2,3].map(n=>`<div class="gx-card ph"><div class="vid"><i class="gx-play">▶</i><span>Film ${n} · coming soon</span></div></div>`).join('');
   return `<div class="gx-head"><div class="gx-hw"><h3>${c.name}</h3></div><p>${c.desc}</p></div><div class="gx-track">${vs}</div>`};
  const swap=(i,dir)=>{panel.innerHTML=build(i);num.textContent=String(i+1).padStart(2,'0');busy=false;if(rm)return;
   gsap.fromTo(num,{yPercent:70*dir,opacity:0},{yPercent:0,opacity:1,duration:1.1,ease:'expo.out'});
@@ -472,7 +466,7 @@ if($('#gx')){
  const go=(i,first)=>{if(i===cur||busy||i<0||i>=G.length)return;const dir=i>cur?1:-1,prev=cur;cur=i;
   T.forEach((t,k)=>t.classList.toggle('on',k===i));place(i,first);
   tabs.scrollTo({left:T[i].offsetLeft-(tabs.clientWidth-T[i].offsetWidth)/2,behavior:'smooth'});
-  if(!first){try{history.replaceState(null,'','#'+G[i].id)}catch(e){}}
+  try{history.replaceState(null,'','#'+G[i].id)}catch(e){}
   if(first||rm||prev<0){swap(i,dir);return}
   busy=true;gsap.to('.gx-card',{x:-130*dir,opacity:0,stagger:.05,duration:.45,ease:'power2.in'});gsap.to('.gx-head',{opacity:0,y:-12,duration:.4,onComplete:()=>swap(i,dir)})};
  tabs.addEventListener('click',e=>{const b=e.target.closest('.gx-tab');if(b)go(+b.dataset.i)});
@@ -487,10 +481,7 @@ if($('#gx')){
  panel.addEventListener('click',e=>{const c=e.target.closest('.gx-card');if(!c||c.classList.contains('ph')||mv)return;stopV();const v=c.querySelector('video'),f=c.querySelector('iframe');
   lv.innerHTML=f?`<iframe src="${f.src}" allowfullscreen></iframe>`:`<video src="${v.getAttribute('src')}" controls autoplay playsinline></video>`;lb.classList.add('on');lenis.stop();if(!rm)gsap.fromTo(lv,{scale:.92,opacity:0},{scale:1,opacity:1,duration:.8,ease:'expo.out'})});
  lb.addEventListener('click',e=>{if(e.target===lb||e.target.closest('.gx-x'))shut()});addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
- const start=()=>{const h=location.hash.slice(1),hi=G.findIndex(c=>c.id===h);go(Math.max(0,hi),true);if(hi>=0)setTimeout(()=>lenis.scrollTo('#gallery',{offset:-60}),2800)};
- const fv=G.flatMap(c=>c.videos).find(v=>v.poster&&!/^(https?:)?\/\//.test(v.poster)),bs=['','mirchi/'];
- const tryB=i=>{if(i>=bs.length){const n=document.createElement('p');n.className='gx-err';n.textContent='Videos not found. Please upload the "gallery" folder next to index.html.';$('#gx').before(n);start();return}const im=new Image();im.onload=()=>{B=bs[i];start()};im.onerror=()=>tryB(i+1);im.src=bs[i]+fv.poster};
- fv?tryB(0):start();
+ const h=location.hash.slice(1);go(Math.max(0,G.findIndex(c=>c.id===h)),true);
  addEventListener('resize',()=>place(cur,true));if(document.fonts)document.fonts.ready.then(()=>place(cur,true));
  if(!rm)gsap.from('.gx-top>*,.gx-rw',{opacity:0,y:30,stagger:.12,delay:1.6,duration:1.2,ease:'power3.out'});
 }
